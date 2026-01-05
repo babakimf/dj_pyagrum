@@ -4,7 +4,19 @@
 
 
 {% block content %}
-    <h1>You are in Diagnosis Page</h1>
+    <h1>Diagnosis</h1>
+    <form action="" method="post">
+        {% csrf_token %} 
+        {{form.as_p}}
+        <button type="submit">Diagnose</button>
+    </form>
+    {% if diagnosis.diagnosis %}
+        <hr>
+        <h2>Result</h2>
+        <p>{{ diagnosis.diagnosis }}</p>
+        <a href="{% url 'diagnosis_detail' diagnosis.pk %}">Detail</a>
+    {% endif %}
+    <a href="{% url 'home' %}">Home</a><br>
 {% endblock content %}
     
     

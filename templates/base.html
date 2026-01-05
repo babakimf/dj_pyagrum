@@ -18,14 +18,15 @@
     <body>
 
         {% include 'fragments/nav.html' %}
-
         {% include 'fragments/header.html' %}
         <!-- Section-->
-        <section class="py-3">            
-            {% block content %}
-                
-            {% endblock content %}                
-        </section>
+        <div class="container">
+            <section class="py-3">
+                {% block content %}
+            
+                {% endblock content %}
+            </section>
+        </div>
         {% include 'fragments/footer.html' %}
     </body>
 </html>

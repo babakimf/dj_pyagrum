@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}Diagnosis Detail{% endblock title %}
+
+
+{% block content %}
+    <h1>Diagnosis</h1>
+    
+        <h3>Child 1: {{diagnosis.child1}}</h3>
+        <h3>Child 2: {{diagnosis.child2}}</h3>
+        <h3>Diagnosis: {{diagnosis.diagnosis}}</h3>
+        <a href="{% url 'home' %}">Home</a>
+    
+{% endblock content %}
+    
+    

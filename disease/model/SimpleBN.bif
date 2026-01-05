@@ -1,0 +1,28 @@
+network "SimpleBN" {
+// written by aGrUM 2.3.1
+}
+
+variable Parent {
+   type discrete[2] {No, Yes};
+}
+
+variable Child1 {
+   type discrete[3] {None, Low, High};
+}
+
+variable Child2 {
+   type discrete[2] {No, Yes};
+}
+
+probability (Parent) {
+   table 0.3 0.7;
+}
+probability (Child1 | Parent) {
+   (No) 0.8 0.3 0.1;
+   (Yes) 0.1 0.3 0.8;
+}
+probability (Child2 | Parent) {
+   (No) 0.6 0.4;
+   (Yes) 0.3 0.8;
+}
+
